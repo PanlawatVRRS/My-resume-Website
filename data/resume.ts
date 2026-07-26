@@ -27,7 +27,6 @@ export const profile = {
   socials: [
     { label: "GitHub", href: "https://github.com/PanlawatVRRS" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/panlawat-veerarangsan-pan" },
-    { label: "Resume PDF", href: "/resume.pdf" },
   ],
   availability: {
     th: "ว่างรับงานใหม่ / Open to work",
@@ -123,45 +122,6 @@ export const experience = [
         "Designed and implemented an intelligent digital signage system utilizing Anthias for comprehensive organizational public relations.",
       ],
     },
-  },
-];
-
-export const projects = [
-  {
-    name: {
-      th: "ระบบจัดการคลังสินค้าออนไลน์",
-      en: "Online Warehouse Management System",
-    },
-    description: {
-      th: "เว็บแอปสำหรับติดตามสต๊อกสินค้าแบบเรียลไทม์ พร้อมแดชบอร์ดวิเคราะห์ยอดขาย ใช้ Next.js, PostgreSQL และ WebSocket",
-      en: "Real-time inventory tracking web app with sales analytics dashboard built with Next.js, PostgreSQL, and WebSocket.",
-    },
-    tags: ["Next.js", "PostgreSQL", "WebSocket"],
-    href: "https://github.com/yourname/project-one",
-  },
-  {
-    name: {
-      th: "แอปพลิเคชันจองคิวร้านอาหาร",
-      en: "Restaurant Queue Booking App",
-    },
-    description: {
-      th: "ระบบจองโต๊ะและจัดคิวสำหรับร้านอาหาร รองรับการแจ้งเตือนผ่าน LINE Notify",
-      en: "Table reservation and queue management system with LINE Notify integration.",
-    },
-    tags: ["React Native", "Node.js", "Redis"],
-    href: "https://github.com/yourname/project-two",
-  },
-  {
-    name: {
-      th: "Design System ภายในทีม",
-      en: "Internal Design System",
-    },
-    description: {
-      th: "ไลบรารีคอมโพเนนต์ UI ที่ใช้ร่วมกันในทุกโปรเจกต์ของทีม ลดเวลาพัฒนา UI ใหม่ลงกว่าครึ่ง",
-      en: "Shared UI component library used across all team projects, cutting new UI development time in half.",
-    },
-    tags: ["React", "Storybook", "TypeScript"],
-    href: "https://github.com/yourname/project-three",
   },
 ];
 

@@ -5,6 +5,7 @@ import { profile } from "@/data/resume";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { HiDownload } from "react-icons/hi";
 
 export default function Hero() {
   const { lang } = useLanguage();
@@ -34,6 +35,20 @@ export default function Hero() {
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
+  };
+
+  // Configuration ปุ่ม CV PDF แยกตามภาษา
+  const cvConfig = {
+    th: {
+      label: "ดาวน์โหลด CV (TH)",
+      href: "/CV/พัลวัฒน์-วีระรังสรรค์-CV.pdf",
+      fileName: "พัลวัฒน์-วีระรังสรรค์-CV.pdf",
+    },
+    en: {
+      label: "Download CV (EN)",
+      href: "/CV/Panlawat-Veerarangsan-CV.pdf",
+      fileName: "Panlawat-Veerarangsan-CV.pdf",
+    },
   };
 
   return (
@@ -89,7 +104,7 @@ export default function Hero() {
             }}
             className="relative cursor-pointer group flex items-center justify-center p-2"
           >
-            {/* Subtle RGB Ambient Glow Effect (ปรับขยายแสงเวลา Hover ให้กว้างขึ้น) */}
+            {/* Subtle RGB Ambient Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-rose-500/20 via-indigo-500/20 to-cyan-400/20 blur-xl opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700 pointer-events-none" />
 
             {/* Circular Liquid Glass Frame (~180px) */}
@@ -128,11 +143,24 @@ export default function Hero() {
         <TitleCell label="Experience" value="1+" />
       </div>
 
-      {/* Social Links Glass Pills */}
+      {/* Social Links Glass Pills + Dynamic CV Download Button */}
       <div
-        className="reveal mt-8 flex flex-wrap gap-3 font-mono text-xs uppercase tracking-widest"
+        className="reveal mt-8 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest"
         style={{ animationDelay: "0.3s" }}
       >
+        {/* ปุ่มดาวน์โหลด CV แยกตามภาษา */}
+        <a
+          href={cvConfig[lang]?.href || cvConfig.en.href}
+          download={cvConfig[lang]?.fileName || cvConfig.en.fileName}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/cv relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-accent/40 bg-accent/15 dark:bg-accent/20 backdrop-blur-md px-4 py-2 text-ink transition-all duration-300 hover:border-accent hover:bg-accent hover:text-slate-900 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
+        >
+          <HiDownload className="h-4 w-4 transition-transform group-hover/cv:-translate-y-0.5 text-accent group-hover/cv:text-slate-900" />
+          <span className="font-semibold">{cvConfig[lang]?.label || cvConfig.en.label}</span>
+        </a>
+
+        {/* ลิงก์ Social Media */}
         {profile.socials.map((s) => (
           <a
             key={s.label}
