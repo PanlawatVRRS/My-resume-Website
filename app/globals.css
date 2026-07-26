@@ -1,0 +1,429 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   🎨 DESIGN SYSTEM VARIABLES & THEME ENGINE
+   ========================================================================== */
+
+/* 1️⃣ BASE ROOT: Default Dark Mode เพื่อกัน FOUC แฟลชขาว */
+:root {
+  color-scheme: dark;
+  --paper: #0b1320;
+  --paper-card: #111c2e;
+  --paper-raised: #18263e;
+  --ink: #e2e8f0;
+  --ink-soft: #94a3b8;
+  --line: #22334d;
+  --line-strong: #334b6e;
+  --accent: #f97316;
+  --accent-ink: #fdba74;
+  --ok: #4ade80;
+
+  /* Font System */
+  --font-display: var(--font-plex-sans);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+/* ☀️ LIGHT MODE: Soft Warm Crystal System (Updated to Comfortable Green-White Tone) */
+:root:has(.light),
+html.light,
+.light {
+  color-scheme: light !important;
+  /* UPDATED: เปลี่ยนเป็นขาวนวลโทนเขียวอ่อน สบายตา (Pale Green-White) */
+  --paper: #f0f4f2 !important;
+  --paper-card: #ffffff !important;
+  --paper-raised: #ffffff !important;
+  /* UPDATED: ตัวอักษรสีเขียวเข้มSlate Green เพื่อลดคอนทราสต์ (Dark Slate Green) */
+  --ink: #1a2e24 !important;
+  --ink-soft: #5c7a6e !important; /* เขียวเทาหม่น */
+  /* UPDATED: เส้นสีเขียวเทาอ่อน (Soft Mint Grey) */
+  --line: #d1dad5 !important;
+  --line-strong: #a9b5af !important;
+  /* UPDATED: สีเน้นเป็นเขียวมรกตมินท์สด (Vibrant Mint Green) */
+  --accent: #22c55e !important;
+  --accent-ink: #1a2e24 !important; /* ใช้สีInkหลัก */
+  --ok: #16a34a !important; /* เขียวสดแบบOk */
+}
+
+/* 🌙 DARK MODE: Deep Space Neon Glass System (เหมือนเดิม) */
+:root:has(.dark),
+html.dark,
+.dark {
+  color-scheme: dark;
+  --paper: #0b1320;
+  --paper-card: #111c2e;
+  --paper-raised: #18263e;
+  --ink: #e2e8f0;
+  --ink-soft: #94a3b8;
+  --line: #22334d;
+  --line-strong: #334b6e;
+  --accent: #f97316;
+  --accent-ink: #fdba74;
+  --ok: #4ade80;
+}
+
+@theme {
+  --color-paper: var(--paper);
+  --color-paper-card: var(--paper-card);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-ok: var(--ok);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+/* ... (🛠️ BASE & GLOBAL STYLES, 📐 BLUEPRINT UI COMPONENTS เหมือนเดิม) ... */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--paper) !important;
+}
+
+body {
+  background-color: var(--paper) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body), sans-serif;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  isolation: isolate;
+}
+
+/* 1️⃣ BASE LAYER: Blueprint Dot Grid (z-index: 2) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
+  background-position: 0 0;
+  background-size: 128px 128px;
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+}
+
+/* 2️⃣ HOVER LAYER: Mouse Highlight สีส้ม (z-index: 3) (เหมือนเดิม) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image: radial-gradient(var(--accent) 2px, transparent 2px);
+  background-position: 0 0;
+  background-size: 128px 128px;
+
+  -webkit-mask-image: radial-gradient(
+    280px 280px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    280px 280px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    transparent 100%
+  );
+}
+
+/* ... (📐 BLUEPRINT UI COMPONENTS, SELECTION/FOCUS เหมือนเดิม) ... */
+
+.blueprint-card {
+  position: relative;
+  background: var(--paper-raised) !important;
+  border: 1px solid var(--line) !important;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.blueprint-card::before,
+.blueprint-card::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--accent);
+  border-style: solid;
+  transition: border-color 0.4s ease;
+}
+
+.blueprint-card::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.blueprint-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.dim-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink-soft);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.dim-line::before,
+.dim-line::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line-strong);
+  transition: background 0.4s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper-raised);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* ==========================================================================
+   💧 iOS LIQUID GLASS (THEMED STYLES & SEPARATE ANIMATIONS)
+   ========================================================================== */
+
+.glass-bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   ☀️ LIGHT MODE GLASS (Updated to Green-White Tone)
+   -------------------------------------------------------------------------- */
+
+/* Background Refraction Glow: UPDATED ปรับโทนสีGradientให้ดูเป็นเขียวอ่อน */
+html.light .glass-bg-container::before,
+.light .glass-bg-container::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: 
+    radial-gradient(
+      ellipse at 35% 25%,
+      rgba(240, 244, 242, 0.95) 0%, /* ใช้สีpaperนวล */
+      rgba(224, 235, 229, 0.5) 40%, /* เขียวมินท์อ่อนมาก */
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 75%,
+      rgba(34, 197, 94, 0.15) 0%, /* ใช้สีaccentเขียว */
+      transparent 55%
+    );
+  opacity: 0;
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  animation: glassBaseEntranceLight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glass Panel 1 (Light): UPDATED ปรับเฉดGradientและShadowให้ดูเขียวเย็นนวล */
+html.light .glass-panel-1,
+.light .glass-panel-1 {
+  position: absolute;
+  top: -18%;
+  left: -12%;
+  width: 135vw;
+  height: 75vh;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  /* UPDATED: Gradient ผสมเขียวมิ้นท์อ่อน */
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(224, 235, 229, 0.25) 40%, /* เขียวมินท์อ่อน */
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  /* UPDATED: Shadow โทนเย็นนวล */
+  box-shadow: 
+    inset 0 3px 8px rgba(255, 255, 255, 0.95),
+    inset -2px -4px 12px rgba(26, 46, 36, 0.04), /* ใช้สีInk Slate */
+    0 20px 40px rgba(26, 46, 36, 0.05);
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation: glassPanel1LightSpring 2.2s cubic-bezier(0.34, 1.4, 0.64, 1) 0.1s forwards;
+}
+
+/* ❌ ซ่อน Glass Panel 2 ใน Light Mode */
+html.light .glass-panel-2,
+.light .glass-panel-2 {
+  display: none !important;
+}
+
+/* ... (💧 iOS LIQUID GLASS (DARK MODE เหมือนเดิม) ... */
+/* ==========================================================================
+   💧 iOS LIQUID GLASS (DARK MODE - เหมือนเดิม)
+   ========================================================================== */
+
+/* Background Refraction Glow */
+html.dark .glass-bg-container::before,
+.dark .glass-bg-container::before,
+.glass-bg-container::before {
+  /* ... (content, position, background, backdrop-filter เหมือนเดิม) ... */
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: 
+    radial-gradient(
+      ellipse at 20% 15%,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.03) 35%,
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      var(--accent) 0%,
+      transparent 50%
+    );
+  opacity: 0;
+  backdrop-filter: blur(45px) saturate(200%);
+  -webkit-backdrop-filter: blur(45px) saturate(200%);
+
+  /* ปรับ Bezier Curve ให้ Smooth ลื่นไหลแบบ iOS */
+  animation: glassBaseEntranceDark 3.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Glass Lens 1 (Dark): แผ่นหลักปาดไหลขึ้นมาจากด้านล่าง */
+html.dark .glass-panel-1,
+.dark .glass-panel-1,
+.glass-panel-1 {
+  /* ... (position, size, shape, background, box-shadow อื่นๆ เหมือนเดิม) ... */
+  position: absolute;
+  top: -25%;
+  left: -15%;
+  width: 130vw;
+  height: 85vh;
+  border-radius: 42% 58% 65% 35% / 35% 45% 55% 65%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.008) 45%,
+    transparent 80%
+  );
+  box-shadow: 
+    inset 0 1.5px 3px rgba(255, 255, 255, 0.25),
+    inset 0 -1.5px 4px rgba(0, 0, 0, 0.3),
+    0 40px 100px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  will-change: transform, opacity, filter;
+
+  /* ปรับ Bezier Curve และเพิ่ม Delay เล็กน้อยให้ดูซ้อนชั้น */
+  animation: glassPanel1DarkSmooth 3.2s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
+}
+
+/* Glass Lens 2 (Dark): แผ่นหลังหมุนคลี่ออกมาช้าๆ */
+html.dark .glass-panel-2,
+.dark .glass-panel-2,
+.glass-panel-2 {
+  /* ... (position, size, shape, background, box-shadow เหมือนเดิม) ... */
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 100vw;
+  height: 75vh;
+  border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+  box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  will-change: transform, opacity, filter;
+
+  /* ปรับ Bezier Curve และเพิ่ม Delay ให้ชัดเจนขึ้น */
+  animation: glassPanel2DarkRotate 3.8s cubic-bezier(0.19, 1, 0.22, 1) 0.25s forwards;
+}
+
+/* ==========================================================================
+   🎬 ANIMATION KEYFRAMES (เหมือนเดิม)
+   ========================================================================== */
+/* ... (ANIMATION KEYFRAMES เหมือนเดิม) ... */
+
+@keyframes glassBaseEntranceDark {
+  0% { opacity: 0; }
+  100% { opacity: 0.25; }
+}
+
+@keyframes glassPanel1DarkSmooth {
+  0% {
+    opacity: 0;
+    filter: blur(40px); /* เพิ่ม Blur เริ่มต้นให้ดูนวล */
+    /* UPDATED: เพิ่มระยะ Y-axis เป็น 120px เพื่อให้เห็นการขยับขึ้นชัดเจน */
+    transform: translate3d(-40px, 120px, 0) scale(0.92) rotate(-12deg);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(8px);
+    transform: translate3d(0, 0, 0) scale(1) rotate(-6deg);
+  }
+}
+
+@keyframes glassPanel2DarkRotate {
+  0% {
+    opacity: 0;
+    filter: blur(70px); /* เพิ่ม Blur เริ่มต้น */
+    /* UPDATED: เพิ่มระยะ Y-axis เป็น 150px และปรับ Scale/Rotate ให้ Dramatic */
+    transform: translate3d(60px, 150px, 0) scale(0.9) rotate(20deg);
+  }
+  100% {
+    opacity: 0.08;
+    filter: blur(35px);
+    transform: translate3d(0, 0, 0) scale(1) rotate(10deg);
+  }
+}
+
+/* ==========================================================================
+   🎬 ANIMATION KEYFRAMES (DISTINCT FOR EACH MODE) - เหมือนเดิม
+   ========================================================================== */
+
+/* Light Mode Animations */
+@keyframes glassBaseEntranceLight {
+  0% { opacity: 0; }
+  100% { opacity: 0.65; }
+}
+
+/* ตัด filter ออก เหลือแค่ transform และ opacity เพื่อความลื่นไหลระดับฮาร์ดแวร์ */
+@keyframes glassPanel1LightSpring {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, -40px, 0) rotate(-6deg) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
