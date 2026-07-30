@@ -225,6 +225,107 @@ export const projects: Project[] = [
     showPDF: false,
   },
   {
+    id: "Every-sence",
+    name: {
+      th: "เว็บไซต์ขายเสื้อผ้า Every.sence",
+      en: "ITMX-Portal (CFR) Operations Support Utility",
+    },
+    description: {
+      th: "เว็บไซต์ขายเสื้อผ้าแนว Street fashion ที่เน้นการผสมผสานความเรียบหรูและลูกเล่นแนวสตรีทเข้าด้วยกันพร้อมระบบจัดการตะกร้าและจ่ายเงินด้วย QR code หรือ credit card",
+      en: "A Desktop Application built with Python and PySide6 designed to assist operators in data management, error validation, and accelerating workflows on the ITMX (CFR) web portal. The utility focuses on automating manual steps and reducing human errors.",
+    },
+    overview: {
+      th: "เว็บไซต์นี้ถูกสร้างมาเพื่อจำลองการทำเว็บไซต์ขายของที่มีการจัด section ต่างๆ พร้อม UI ที่ลื่นไหลและการดึงข้อมูลจาก JSON มาแสดงผลพร้อมฟังก์ชั่นการค้นหา และการจ่ายเงินด้วย QR code โดยใช้ promptpay QR",
+      en: "This system was developed to address the increasing caseload of financial transaction matching on the ITMX-Portal (CFR). The primary objective is to enhance efficiency, streamline the transaction linking process, and reduce operational time within defined development scopes and constraints.",
+    },
+    role: {
+      th: [
+        "Full Stack Developer",
+      ],
+      en: [
+        "Full Stack Developer",
+      ]
+    },
+    goals: {
+      th: "การลงมือพัฒนาการจัดการ section และฝึกการจัดวางและออกแบบ UI สำหรับร้านค้าพร้อม ทดลองใช้งานการจ่ายด้วย Qr code promptpay",
+      en: "Focused on reducing repetitive tasks, increasing efficiency in financial transaction linking, minimizing human data-entry errors, and enabling result tracking.",
+    },
+    challenges: {
+      th: [
+        "การใช้งาน QR code promptpay service ในการพัฒนาการจ่ายด้วย QR code ครั้งแรก",
+        "การจัดการกับข้อมูล JSON ให้สามารถแสดงผลได้",
+        "ควบคุมการเพิ่ม ลด และจัดการตะกร้าสินค้า",
+      ],
+      en: [
+        "Handling restricted database access and connectivity with headquarters in Hong Kong",
+        "Minimizing human data-entry errors down to near-zero tolerance",
+        "Ensuring 100% accuracy for all input and output transaction data",
+        "Filtering and pulling relevant metrics from a user database exceeding 200,000 active records",
+      ],
+    },
+    results: {
+      th: [
+        "สามารถนำ JSON ไฟล์มาแสดงผลได้จริงเป็นรูปแบบของ Collections ต่างๆ",
+        "สามารถใช้ QR code promptpay service ในการชำระเงินได้จริง",
+      ],
+      en: [
+        "Reduced transaction processing time by over 200% compared to standard workflows",
+        "Decreased human data-entry errors by nearly 70%",
+        "Successfully implemented Excel-to-JSON parsing workflow bypassing restricted direct API connections",
+        "Established full audit trail logging and analytical dashboard reporting for historical transaction records",
+      ],
+    },
+    learnings: {
+      th: [
+        "การ import generatePayload จาก promptpay-qr",
+        "การนำ JSON มาแสดงบนจอ UI ในรูปแบบ Collection ต่างๆ",
+        "การออกแบบ UI/UX เพื่อเพิ่มประสบการณ์ในการใช้งานที่ลื่นไหลและดียิ่งขึ้น",
+      ],
+      en: [
+        "Applying Minimal Viable Product (MVP) principles to rapidly deploy user-centric features",
+        "Leveraging local Excel data structures and JSON conversion as a reliable fallback data pipeline without direct API connections",
+        "Designing intuitive UI/UX patterns to optimize operator workflow efficiency",
+      ],
+    },
+    futurePlans: {
+      th: [
+        "เพิ่มการเชื่อมต่อ API กับธนาคาร เพื่อชำระผ่านบัตรเครดิต (จะมีค่า MDR เพิ่มเติม)",
+        "ปรับเปลี่ยนรูปแบบการจัดเก็บข้อมูลโดยเก็บภาพไว้ที่ Cloud และข้อมูลสินค้านำไปเก็บไว้ที่ Database",
+        "เพิ่มการลองรับภาษาอื่นๆเพิ่มเติม",
+      ],
+      en: [
+        "Develop direct API integration to replace manual data submission on the web portal",
+        "Migrate user data storage from local files to a Relational Database (e.g., PostgreSQL) to handle growing user data and enhance security",
+        "Add support for additional languages",
+        "Add support for macOS and iOS versions",
+      ],
+    },
+    pdfUrl: {
+      th: "/docs/itmx-portal-spec-th.pdf",
+      en: "/docs/itmx-portal-spec-en.pdf",
+    },
+    showSections: {
+      overview: true,
+      role: true,
+      goals: true,
+      challenges: true,
+      results: true,
+      learnings: true,
+      futurePlans: true,
+    },
+    images: [
+      "/projects/every-sense/im1.png",
+      "/projects/every-sense/im2.png",
+      "/projects/every-sense/im3.png",
+      "/projects/every-sense/im4.png",
+      "/projects/every-sense/im5.png",
+    ],
+    tags: ["Python", "PySide6"],
+    href: "https://every-sense.vercel.app",
+    showSourceCode: true,
+    showPDF: false,
+  },
+  {
     id: "Stroop_test",
     name: {
       th: "การทดสอบ Stroop พร้อมอุปกรณ์สำหรับตอบคำถาม",
