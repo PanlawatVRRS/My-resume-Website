@@ -228,15 +228,15 @@ export const projects: Project[] = [
     id: "Every-sence",
     name: {
       th: "เว็บไซต์ขายเสื้อผ้า Every.sence",
-      en: "ITMX-Portal (CFR) Operations Support Utility",
+      en: "Every.sence Streetwear E-Commerce Website",
     },
     description: {
       th: "เว็บไซต์ขายเสื้อผ้าแนว Street fashion ที่เน้นการผสมผสานความเรียบหรูและลูกเล่นแนวสตรีทเข้าด้วยกันพร้อมระบบจัดการตะกร้าและจ่ายเงินด้วย QR code หรือ credit card",
-      en: "A Desktop Application built with Python and PySide6 designed to assist operators in data management, error validation, and accelerating workflows on the ITMX (CFR) web portal. The utility focuses on automating manual steps and reducing human errors.",
+      en: "A streetwear fashion e-commerce website focusing on a blend of elegance and street style elements, complete with a cart management system and checkout via QR code or credit card.",
     },
     overview: {
       th: "เว็บไซต์นี้ถูกสร้างมาเพื่อจำลองการทำเว็บไซต์ขายของที่มีการจัด section ต่างๆ พร้อม UI ที่ลื่นไหลและการดึงข้อมูลจาก JSON มาแสดงผลพร้อมฟังก์ชั่นการค้นหา และการจ่ายเงินด้วย QR code โดยใช้ promptpay QR",
-      en: "This system was developed to address the increasing caseload of financial transaction matching on the ITMX-Portal (CFR). The primary objective is to enhance efficiency, streamline the transaction linking process, and reduce operational time within defined development scopes and constraints.",
+      en: "This website was built to simulate an e-commerce platform featuring structured sections, a smooth UI, data fetching from JSON with search functionality, and QR code payments using PromptPay QR.",
     },
     role: {
       th: [
@@ -248,7 +248,7 @@ export const projects: Project[] = [
     },
     goals: {
       th: "การลงมือพัฒนาการจัดการ section และฝึกการจัดวางและออกแบบ UI สำหรับร้านค้าพร้อม ทดลองใช้งานการจ่ายด้วย Qr code promptpay",
-      en: "Focused on reducing repetitive tasks, increasing efficiency in financial transaction linking, minimizing human data-entry errors, and enabling result tracking.",
+      en: "To develop section management skills, practice store UI layout and design, and experiment with PromptPay QR code payment integration.",
     },
     challenges: {
       th: [
@@ -257,10 +257,9 @@ export const projects: Project[] = [
         "ควบคุมการเพิ่ม ลด และจัดการตะกร้าสินค้า",
       ],
       en: [
-        "Handling restricted database access and connectivity with headquarters in Hong Kong",
-        "Minimizing human data-entry errors down to near-zero tolerance",
-        "Ensuring 100% accuracy for all input and output transaction data",
-        "Filtering and pulling relevant metrics from a user database exceeding 200,000 active records",
+        "Using the PromptPay QR code service for the first time to implement QR code payments",
+        "Managing and rendering JSON data for display",
+        "Controlling and managing product additions, removals, and cart operations",
       ],
     },
     results: {
@@ -269,10 +268,8 @@ export const projects: Project[] = [
         "สามารถใช้ QR code promptpay service ในการชำระเงินได้จริง",
       ],
       en: [
-        "Reduced transaction processing time by over 200% compared to standard workflows",
-        "Decreased human data-entry errors by nearly 70%",
-        "Successfully implemented Excel-to-JSON parsing workflow bypassing restricted direct API connections",
-        "Established full audit trail logging and analytical dashboard reporting for historical transaction records",
+        "Successfully rendered JSON files into various collection formats",
+        "Successfully implemented functional PromptPay QR code payments",
       ],
     },
     learnings: {
@@ -282,9 +279,9 @@ export const projects: Project[] = [
         "การออกแบบ UI/UX เพื่อเพิ่มประสบการณ์ในการใช้งานที่ลื่นไหลและดียิ่งขึ้น",
       ],
       en: [
-        "Applying Minimal Viable Product (MVP) principles to rapidly deploy user-centric features",
-        "Leveraging local Excel data structures and JSON conversion as a reliable fallback data pipeline without direct API connections",
-        "Designing intuitive UI/UX patterns to optimize operator workflow efficiency",
+        "Learning how to import generatePayload from promptpay-qr",
+        "Rendering JSON data onto the UI in various collection layouts",
+        "Designing UI/UX to enhance usability and provide a smooth user experience",
       ],
     },
     futurePlans: {
@@ -294,15 +291,14 @@ export const projects: Project[] = [
         "เพิ่มการลองรับภาษาอื่นๆเพิ่มเติม",
       ],
       en: [
-        "Develop direct API integration to replace manual data submission on the web portal",
-        "Migrate user data storage from local files to a Relational Database (e.g., PostgreSQL) to handle growing user data and enhance security",
+        "Integrate bank APIs for credit card payments (subject to additional MDR fees)",
+        "Migrate storage architecture by keeping images on Cloud storage and product data in a Database",
         "Add support for additional languages",
-        "Add support for macOS and iOS versions",
       ],
     },
     pdfUrl: {
       th: "/docs/itmx-portal-spec-th.pdf",
-      en: "/docs/itmx-portal-spec-en.pdf",
+      en: "/docs/every-sense-spec-en.pdf",
     },
     showSections: {
       overview: true,
@@ -320,11 +316,11 @@ export const projects: Project[] = [
       "/projects/every-sense/im4.png",
       "/projects/every-sense/im5.png",
     ],
-    tags: ["Python", "PySide6"],
+    tags: ["Next.js", "Node.js"],
     href: "https://every-sense.vercel.app",
     showSourceCode: true,
     showPDF: false,
-  },
+},
   {
     id: "Stroop_test",
     name: {
