@@ -135,96 +135,7 @@ export const projects: Project[] = [
     showSourceCode: false,
     showPDF: false,
   },
-  {
-    id: "New_ACU_PAY_Thailand_website",
-    name: {
-      th: "เว็บไซต์ใหม่ของ ACU PAY Thailand",
-      en: "The New ACU PAY Thailand Website",
-    },
-    description: {
-      th: "เว็บไซต์ใหม่ของ ACU PAY Thailand ที่จะมาแทนเว็บไซต์เก่าที่ใช้ WordPress โดยการเปลี่ยนไปใช้ Next.js แทนและเพิ่มฟีเจอร์ใหม่เพื่อรองรับการพัฒนาของบริษัทในอนาคต",
-      en: "The new ACU PAY Thailand website replacing the legacy WordPress stack with Next.js, featuring new capabilities to support future company growth.",
-    },
-    overview: {
-      th: "เพิ่มประสิทธิภาพของเว็บไซต์ให้สามารถโหลดหน้าได้เร็วขึ้นพร้อมปรับปรุง UI ให้ทันสมัยมากยิ่งขึ้นและเพิ่มฟีเจอร์ใหม่ในเว็บไซต์ อาทิเช่น แชทซัพพอร์ตอัตโนมัติ การรองรับ SEO ในอนาคต",
-      en: "Boosted website loading speed, modernized the UI/UX, and introduced new features such as automated support chat and technical SEO readiness.",
-    },
-    role: {
-      th: [
-        "Lead Project, Product Owner and Frontend developer",
-      ],
-      en: [
-        "Lead Project, Product Owner, and Frontend Developer",
-      ]
-    },
-    goals: {
-      th: "ประสิทธิภาพความเร็วและความลื่นไหลดียิ่งขึ้น และมีฟีเจอร์ซัพพอร์ตการใช้งานของผู้เข้าชมเว็บไซต์อาทิ แชทซัพพอร์ตอัตโนมัติ และ UI ที่สร้างประสบการณ์ใช้งานที่ลื่นไหล พร้อมฟีเจอร์การทำ SEO ที่ดียิ่งขึ้น",
-      en: "Achieved superior speed and smoothness, integrated user support features like automated chat, delivered a seamless UI/UX, and optimized SEO capabilities.",
-    },
-    challenges: {
-      th: [
-        "เปลี่ยนจาก CMS เดิม (WordPress) มาเป็น Next.js โดยที่ต้องรักษาหรือปรับปรุงประสิทธิภาพ SEO ให้ดียิ่งขึ้นจากของเก่า",
-        "การควบหลายบทบาทในตำแหน่ง Lead Project, Product Owner ทำให้มี Workload ในการทำงานสูง",
-        "การลองรับ resolution ที่หลากหลาย อาทิเช่น Mobile Phone, PC และ Tablet",
-      ],
-      en: [
-        "Migrated from the legacy CMS (WordPress) to Next.js while maintaining or improving SEO performance",
-        "Managed a high workload due to wearing multiple hats as Lead Project and Product Owner",
-        "Supported a wide range of resolutions including Mobile Phones, PCs, and Tablets",
-      ],
-    },
-    results: {
-      th: [
-        "ลดเวลาในการโหลดหน้า page ของเว็บไซค์ จากการทดสอบสามารถโหลดได้เร็วขึ้นมากกว่า 3 เท่า",
-        "การใช้งานมีความลื่นไหลและทันสมัยมากขึ้น",
-      ],
-      en: [
-        "Reduced page load time by over 3x based on performance testing",
-        "Delivered a much smoother and modern user experience",
-      ],
-    },
-    learnings: {
-      th: [
-        "การพัฒนาโปรแกรมด้วย Next.js",
-        "การเปลี่ยนจาก CSS มาใช้เป็น Tailwind CSS",
-        "ทักษะการกำหนดแนวทาง การจัดการตารางเวลาและ ประสานงานกับนักพัฒนาในทีม",
-      ],
-      en: [
-        "Developing applications with Next.js",
-        "Transitioning from vanilla CSS to Tailwind CSS",
-        "Refining project management, scheduling, and team coordination skills",
-      ],
-    },
-    futurePlans: {
-      th: [
-        "เปลี่ยน CMS แบบเดิมเป็น Server Side Rendering (SSR)",
-        "ปรับปรุงระบบจัดการหลังบ้านเพื่อสามารถดูแลและจัดการ website ได้ดียิ่งขึ้น",
-      ],
-      en: [
-        "Migrate legacy CMS elements to Server-Side Rendering (SSR)",
-        "Improve the backend management system for better website administration and content control",
-      ],
-    },
-    pdfUrl: {
-      th: "/docs/itmx-portal-spec-th.pdf",
-      en: "/docs/itmx-portal-spec-en.pdf",
-    },
-    showSections: {
-      overview: true,
-      role: true,
-      goals: true,
-      challenges: true,
-      results: true,
-      learnings: true,
-      futurePlans: true,
-    },
-    images: [],
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    href: "https://github.com/yourname/project-two",
-    showSourceCode: false,
-    showPDF: false,
-  },
-  {
+    {
     id: "Every-sence",
     name: {
       th: "เว็บไซต์ขายเสื้อผ้า Every.sence",
@@ -316,7 +227,7 @@ export const projects: Project[] = [
       "/projects/every-sense/im4.png",
       "/projects/every-sense/im5.png",
     ],
-    tags: ["Next.js", "Node.js"],
+    tags: ["Next.js", "Node.js","TypeScript"],
     href: "https://every-sense.vercel.app",
     showSourceCode: true,
     showPDF: false,
@@ -419,6 +330,95 @@ export const projects: Project[] = [
     showSourceCode: false,
     showPDF: false,
 },
+  {
+    id: "New_ACU_PAY_Thailand_website",
+    name: {
+      th: "เว็บไซต์ใหม่ของ ACU PAY Thailand",
+      en: "The New ACU PAY Thailand Website",
+    },
+    description: {
+      th: "เว็บไซต์ใหม่ของ ACU PAY Thailand ที่จะมาแทนเว็บไซต์เก่าที่ใช้ WordPress โดยการเปลี่ยนไปใช้ Next.js แทนและเพิ่มฟีเจอร์ใหม่เพื่อรองรับการพัฒนาของบริษัทในอนาคต",
+      en: "The new ACU PAY Thailand website replacing the legacy WordPress stack with Next.js, featuring new capabilities to support future company growth.",
+    },
+    overview: {
+      th: "เพิ่มประสิทธิภาพของเว็บไซต์ให้สามารถโหลดหน้าได้เร็วขึ้นพร้อมปรับปรุง UI ให้ทันสมัยมากยิ่งขึ้นและเพิ่มฟีเจอร์ใหม่ในเว็บไซต์ อาทิเช่น แชทซัพพอร์ตอัตโนมัติ การรองรับ SEO ในอนาคต",
+      en: "Boosted website loading speed, modernized the UI/UX, and introduced new features such as automated support chat and technical SEO readiness.",
+    },
+    role: {
+      th: [
+        "Lead Project, Product Owner and Frontend developer",
+      ],
+      en: [
+        "Lead Project, Product Owner, and Frontend Developer",
+      ]
+    },
+    goals: {
+      th: "ประสิทธิภาพความเร็วและความลื่นไหลดียิ่งขึ้น และมีฟีเจอร์ซัพพอร์ตการใช้งานของผู้เข้าชมเว็บไซต์อาทิ แชทซัพพอร์ตอัตโนมัติ และ UI ที่สร้างประสบการณ์ใช้งานที่ลื่นไหล พร้อมฟีเจอร์การทำ SEO ที่ดียิ่งขึ้น",
+      en: "Achieved superior speed and smoothness, integrated user support features like automated chat, delivered a seamless UI/UX, and optimized SEO capabilities.",
+    },
+    challenges: {
+      th: [
+        "เปลี่ยนจาก CMS เดิม (WordPress) มาเป็น Next.js โดยที่ต้องรักษาหรือปรับปรุงประสิทธิภาพ SEO ให้ดียิ่งขึ้นจากของเก่า",
+        "การควบหลายบทบาทในตำแหน่ง Lead Project, Product Owner ทำให้มี Workload ในการทำงานสูง",
+        "การลองรับ resolution ที่หลากหลาย อาทิเช่น Mobile Phone, PC และ Tablet",
+      ],
+      en: [
+        "Migrated from the legacy CMS (WordPress) to Next.js while maintaining or improving SEO performance",
+        "Managed a high workload due to wearing multiple hats as Lead Project and Product Owner",
+        "Supported a wide range of resolutions including Mobile Phones, PCs, and Tablets",
+      ],
+    },
+    results: {
+      th: [
+        "ลดเวลาในการโหลดหน้า page ของเว็บไซค์ จากการทดสอบสามารถโหลดได้เร็วขึ้นมากกว่า 3 เท่า",
+        "การใช้งานมีความลื่นไหลและทันสมัยมากขึ้น",
+      ],
+      en: [
+        "Reduced page load time by over 3x based on performance testing",
+        "Delivered a much smoother and modern user experience",
+      ],
+    },
+    learnings: {
+      th: [
+        "การพัฒนาโปรแกรมด้วย Next.js",
+        "การเปลี่ยนจาก CSS มาใช้เป็น Tailwind CSS",
+        "ทักษะการกำหนดแนวทาง การจัดการตารางเวลาและ ประสานงานกับนักพัฒนาในทีม",
+      ],
+      en: [
+        "Developing applications with Next.js",
+        "Transitioning from vanilla CSS to Tailwind CSS",
+        "Refining project management, scheduling, and team coordination skills",
+      ],
+    },
+    futurePlans: {
+      th: [
+        "เปลี่ยน CMS แบบเดิมเป็น Server Side Rendering (SSR)",
+        "ปรับปรุงระบบจัดการหลังบ้านเพื่อสามารถดูแลและจัดการ website ได้ดียิ่งขึ้น",
+      ],
+      en: [
+        "Migrate legacy CMS elements to Server-Side Rendering (SSR)",
+        "Improve the backend management system for better website administration and content control",
+      ],
+    },
+    pdfUrl: {
+      th: "/docs/itmx-portal-spec-th.pdf",
+      en: "/docs/itmx-portal-spec-en.pdf",
+    },
+    showSections: {
+      overview: true,
+      role: true,
+      goals: true,
+      challenges: true,
+      results: true,
+      learnings: true,
+      futurePlans: true,
+    },
+    images: [],
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    href: "https://github.com/yourname/project-two",
+    showSourceCode: false,
+    showPDF: false,
+  },
   {
     id: "Stroop_test",
     name: {
