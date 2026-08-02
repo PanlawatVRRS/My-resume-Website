@@ -321,6 +321,104 @@ export const projects: Project[] = [
     showSourceCode: true,
     showPDF: false,
 },
+{
+    id: "Local-AI-Studio",
+    name: {
+      th: "Local AI Studio และ Chat Interface",
+      en: "Local AI Studio and Chat Interface",
+    },
+    description: {
+      th: "แพลตฟอร์มสนทนากับ AI แบบ Local-First ขับเคลื่อนด้วย Ollama รองรับโมเดลทรงพลังรุ่นล่าสุดอย่าง Qwen 2.5 และ Qwen 3.5 สำหรับการประมวลผลภาษาและการเขียนโค้ด พร้อมระบบ Streaming Real-time และ Studio Dashboard วิเคราะห์สถิติ",
+      en: "A Local-First AI chat platform powered by Ollama, featuring the latest high-performance Qwen 2.5 and Qwen 3.5 models for advanced natural language processing and coding, complete with real-time streaming and a stats analytics studio dashboard.",
+    },
+    overview: {
+      th: "แพลตฟอร์ม AI Workspace ส่วนตัวที่ถูกพัฒนาขึ้นเพื่อรันและบริหารจัดการ Local LLM บูรณาการโมเดลตระกูล Qwen เข้ากับระบบแชท เพื่อรองรับงานประมวลผลภาษาและการเขียนโค้ดอย่างมีประสิทธิภาพ พร้อมแดชบอร์ดวิเคราะห์การใช้ทรัพยากรและ Token แบบ Real-time โดยไม่ต้องพึ่งพา Cloud ภายนอก",
+      en: "A private AI workspace platform built to run and manage Local LLMs, integrating the Qwen model family into a chat interface for efficient text processing and coding, complete with real-time resource and token analytics dashboards without relying on external clouds.",
+    },
+    role: {
+      th: [
+        "Full Stack Developer",
+      ],
+      en: [
+        "Full Stack Developer",
+      ]
+    },
+    goals: {
+      th: "พัฒนาสถาปัตยกรรมเว็บแอปพลิเคชันสำหรับเชื่อมต่อกับ Ollama API รองรับการสลับโมเดลระหว่าง Qwen 2.5 และ Qwen 3.5 การจัดการ Streaming Response และการออกแบบ UI/UX แดชบอร์ดติดตามข้อมูลเชิงลึก",
+      en: "To develop a web application architecture connecting to the Ollama API, supporting model switching between Qwen 2.5 and Qwen 3.5, streaming response handling, and designing insightful dashboard UI/UX.",
+    },
+    challenges: {
+      th: [
+        "การจัดการความแตกต่างของโครงสร้าง Prompt และพารามิเตอร์ระหว่าง Qwen 2.5 และ Qwen 3.5",
+        "การควบคุมระบบ Stream Response ให้แสดงผลข้อความและบล็อกการคิด (Reasoning) อย่างเสถียร",
+        "การบริหารจัดการ State และบริบท (Context Window) ขนาดใหญ่ให้ซิงค์กันระหว่างหน้าแชทและ Dashboard",
+      ],
+      en: [
+        "Managing prompt structure and parameter differences between Qwen 2.5 and Qwen 3.5",
+        "Controlling the stream response system to stably render text and reasoning blocks",
+        "Managing application state and large context windows synchronously between the chat interface and dashboard",
+      ],
+    },
+    results: {
+      th: [
+        "สามารถบูรณาการโมเดล Qwen 2.5 และ Qwen 3.5 เข้ากับหน้าเว็บแชทและระบบสลับโมเดลได้สำเร็จ",
+        "พัฒนาระบบ Streaming Response และหน้า Dashboard ติดตาม Token Usage และทรัพยากรได้จริง",
+      ],
+      en: [
+        "Successfully integrated Qwen 2.5 and Qwen 3.5 models into the chat interface with model switching",
+        "Successfully developed real-time response streaming and a dashboard for tracking token usage and resources",
+      ],
+    },
+    learnings: {
+      th: [
+        "การบริหารจัดการและปรับแต่ง API Payload สำหรับโมเดลตระกูล Qwen ผ่าน Ollama",
+        "การเขียนระบบ ReadableStream เพื่อรองรับการแสดงผลข้อความแบบ Real-time ใน Next.js",
+        "การออกแบบ UI/UX สไตล์ Dashboard เชิงลึกเพื่อให้วิเคราะห์สถิติต่างๆ ได้อย่างสะดวก",
+      ],
+      en: [
+        "Managing and tuning API payloads for the Qwen model family via Ollama",
+        "Implementing ReadableStream handlers to support real-time text rendering in Next.js",
+        "Designing deep analytics dashboard UI/UX for seamless metric tracking",
+      ],
+    },
+    futurePlans: {
+      th: [
+        "เชื่อมต่อฐานข้อมูล PostgreSQL แทน LocalStorage เพื่อรองรับการใช้งานหลายผู้ใช้งาน",
+        "เพิ่มระบบประเมินประสิทธิภาพ (Benchmark) เปรียบเทียบความเร็วและความแม่นยำระหว่างโมเดล",
+        "พัฒนาฟีเจอร์ RAG ให้ AI สามารถดึงข้อมูลจากไฟล์เอกสารของผู้ใช้มาวิเคราะห์ร่วมด้วยได้",
+      ],
+      en: [
+        "Integrate PostgreSQL instead of LocalStorage to support multi-user workflows",
+        "Add a benchmarking system to compare speed and accuracy across models",
+        "Develop RAG features to enable AI document analysis based on user files",
+      ],
+    },
+    pdfUrl: {
+      th: "/docs/local-ai-studio-spec-th.pdf",
+      en: "/docs/local-ai-studio-spec-en.pdf",
+    },
+    showSections: {
+      overview: true,
+      role: true,
+      goals: true,
+      challenges: true,
+      results: true,
+      learnings: true,
+      futurePlans: true,
+    },
+    images: [
+      "/projects/AI_LOCAL/Pic1.png",
+      "/projects/AI_LOCAL/Pic2.png",
+      "/projects/AI_LOCAL/Pic3.png",
+      "/projects/AI_LOCAL/Pic4.png",
+      "/projects/AI_LOCAL/Pic5.png",
+      "/projects/AI_LOCAL/Pic6.png",
+    ],
+    tags: ["Next.js", "Node.js", "Tailwind CSS", "Ollama API", "Qwen 2.5 / 3.5", "TypeScript"],
+    href: "https://your-local-ai-studio.vercel.app",
+    showSourceCode: false,
+    showPDF: false,
+},
   {
     id: "Stroop_test",
     name: {
