@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Thai, IBM_Plex_Mono } from "next/font/google";
-import Script from "next/script"; // 🟢 1. Import Script จาก next/script
 import "./globals.css";
 import { profile } from "@/data/resume";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -37,11 +36,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${plexSansThai.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <head>
-        {/* ⚡ 2. ใช้ <Script> พร้อม strategy="beforeInteractive" ภายใน <head> */}
-        <Script
-          id="theme-initializer"
-          strategy="beforeInteractive"
+      <body className="relative flex min-h-full flex-col bg-paper text-ink overflow-x-hidden">
+        {/* 🟢 เปลี่ยนเป็น <script> แท็กธรรมดา วางไว้ต้น <body> เพื่อรันก่อนหน้าเว็บแสดงผล */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -59,8 +56,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="relative flex min-h-full flex-col bg-paper text-ink overflow-x-hidden">
+
         {/* 💧 iOS Liquid Glass Overlays Layer */}
         <div className="glass-bg-container">
           <div className="glass-panel-1" />
